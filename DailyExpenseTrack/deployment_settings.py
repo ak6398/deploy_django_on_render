@@ -24,12 +24,12 @@ MIDDLEWARE = [
 
 # CORS_ALLOW_ALL_ORIGINS=[]
 
-STORAGES={
-    "default":{
-        "BACKEND":"django.core.files.storage.FileSystemStorage",
-    }
-    "staticfiles":{
-        "BACKEND":"whitenoise.storage.CompressedStaticFilesStorage",
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },  # <--- YOU NEED THIS COMMA HERE
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     }
 }
 
