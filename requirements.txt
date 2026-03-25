@@ -5,3 +5,4 @@ psycopg2-binary==2.9.11
 whitenoise==6.7.0
 dj-database-url==2.1.0
 django-cors-headers==4.9.0
+uvicorn==0.30.5
