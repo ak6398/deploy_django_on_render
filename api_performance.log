@@ -1,0 +1,12 @@
+INFO 2026-04-09 23:11:08,557 autoreload 43444 38236 Watching for file changes with StatReloader
+INFO 2026-04-09 23:11:13,047 autoreload 43444 38236 E:\github_dailyexpensetrack\deploy_django_on_render\DailyExpenseTrack\settings.py changed, reloading.
+INFO 2026-04-09 23:11:13,920 autoreload 20944 44460 Watching for file changes with StatReloader
+INFO 2026-04-09 23:16:49,761 autoreload 20944 44460 E:\github_dailyexpensetrack\deploy_django_on_render\expense\models.py changed, reloading.
+INFO 2026-04-09 23:16:50,456 autoreload 28364 26180 Watching for file changes with StatReloader
+INFO 2026-04-09 23:16:58,075 autoreload 28364 26180 E:\github_dailyexpensetrack\deploy_django_on_render\expense\models.py changed, reloading.
+INFO 2026-04-09 23:16:58,696 autoreload 43600 39836 Watching for file changes with StatReloader
+INFO 2026-04-09 23:18:02,930 autoreload 43600 39836 E:\github_dailyexpensetrack\deploy_django_on_render\expense\models.py changed, reloading.
+INFO 2026-04-09 23:18:03,583 autoreload 33436 9144 Watching for file changes with StatReloader
+INFO 2026-04-09 23:18:06,083 autoreload 33436 9144 E:\github_dailyexpensetrack\deploy_django_on_render\expense\models.py changed, reloading.
+INFO 2026-04-09 23:18:06,633 autoreload 38560 42208 Watching for file changes with StatReloader
+INFO 2026-04-09 23:19:49,196 autoreload 4584 24608 Watching for file changes with StatReloader

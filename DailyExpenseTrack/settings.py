@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleware.PerformanceMonitoringMiddleware',  # ✅ Add performance monitoring
 ]
 
 ROOT_URLCONF = 'DailyExpenseTrack.urls'
@@ -122,3 +123,61 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# ✅ DEFAULT AUTO FIELD
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ✅ LOGGING CONFIGURATION FOR PERFORMANCE MONITORING
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {asctime} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'api_performance.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+        'expense': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+        },
+    },
+}
+
+# ✅ DATABASE QUERY OPTIMIZATION
+# Limit the number of open database connections
+DATABASES['default']['CONN_MAX_AGE'] = 600  # Keep connections alive for 10 minutes
+
+# ✅ CACHING (Optional but recommended)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
+# ✅ SECURITY IMPROVEMENTS
+SECURE_HSTS_SECONDS = 0  # Set to 31536000 in production
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_HSTS_PRELOAD = False
+SECURE_SSL_REDIRECT = False
